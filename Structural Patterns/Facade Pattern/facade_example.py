@@ -60,11 +60,11 @@ class MagicSquareGenerator:
         arr = Generator()
         splitter = Splitter()
 
-        new_matrix = [arr.generate(size) for i in range(size)]
+        new_matrix = [arr.generate(size) for _ in range(size)]
         split_matrix = splitter.split(new_matrix)
 
         while not verify.verify(split_matrix):
-            new_matrix = [arr.generate(size) for i in range(size)]
+            new_matrix = [arr.generate(size) for _ in range(size)]
             split_matrix = splitter.split(new_matrix)
             print(split_matrix)
         return new_matrix
