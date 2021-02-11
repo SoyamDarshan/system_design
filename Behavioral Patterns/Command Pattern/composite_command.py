@@ -138,7 +138,7 @@ class TestSuite(unittest.TestCase):
     def test_better_transfer(self):
         ba1 = BankAccount(100)
         ba2 = BankAccount()
-        amount = 100
+        amount = 1000
         print()
         transfer = MoneyTransferCommand(ba1, ba2, amount)
         transfer.invoke()
