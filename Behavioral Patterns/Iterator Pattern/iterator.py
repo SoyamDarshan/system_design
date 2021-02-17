@@ -65,6 +65,20 @@ def traverse_in_order(root):
         yield node
 
 
+def traverse_preorder(root):
+    def traverse(current):
+        yield current
+        if current.left:
+            for left in traverse(current.left):
+                yield left
+        if current.right:
+            for right in traverse(current.right):
+                yield right
+
+    for node in traverse(root):
+        yield node.value
+
+
 if __name__ == '__main__':
     # 1
     # /\
@@ -86,3 +100,4 @@ if __name__ == '__main__':
         print(x.value)
 
     print([y.value for y in traverse_in_order(root)])
+    print([y for y in traverse_preorder(root)])
